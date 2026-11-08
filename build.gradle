@@ -3,6 +3,10 @@ plugins { id 'java' }
 version = '1.0'
 def mindustryVersion = 'v154'
 
+sourceSets {
+    main.java.srcDirs = ['src']
+}
+
 repositories {
     mavenCentral()
     maven { url 'https://jitpack.io' }
