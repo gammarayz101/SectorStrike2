@@ -1,7 +1,6 @@
 plugins { id 'java' }
 
 version = '1.0'
-def mindustryVersion = 'v154'
 
 sourceSets {
     main.java.srcDirs = ['src']
@@ -9,12 +8,10 @@ sourceSets {
 
 repositories {
     mavenCentral()
-    maven { url 'https://jitpack.io' }
 }
 
 dependencies {
-    compileOnly "com.github.Anuken.Arc:arc-core:$mindustryVersion"
-    compileOnly "com.github.Anuken.Mindustry:core:$mindustryVersion"
+    compileOnly files('libs/Mindustry.jar')
 }
 
 tasks.withType(JavaCompile) {
