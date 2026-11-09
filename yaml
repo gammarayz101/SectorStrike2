@@ -9,6 +9,10 @@ jobs:
         with: { distribution: temurin, java-version: 17 }
       - uses: gradle/actions/setup-gradle@v4
         with: { gradle-version: 8.7 }
+      - name: Download Mindustry
+        run: |
+          mkdir -p libs
+          curl -fL -o libs/Mindustry.jar https://github.com/Anuken/Mindustry/releases/download/v154/Mindustry.jar
       - run: gradle jar
       - uses: actions/upload-artifact@v4
         with: { name: SectorStrike, path: build/libs/*.jar }
